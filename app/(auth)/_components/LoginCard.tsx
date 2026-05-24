@@ -1,4 +1,6 @@
 'use client';
+import { Button } from "@/components/ui/button";
+
 
 interface LoginCardProps {
     onGoogleLogin: () => void;
@@ -39,7 +41,7 @@ export default function LoginCard({ onGoogleLogin }: LoginCardProps) {
 
                 {/* Action Button */}
                 <div className="space-y-4">
-                    <button
+                    <Button
                         onClick={onGoogleLogin}
                         className="flex w-full items-center justify-center gap-3 rounded-xl bg-white px-4 py-3.5 text-sm font-semibold text-slate-700 shadow-md transition-all duration-200 hover:bg-slate-50 hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
                     >
@@ -63,7 +65,7 @@ export default function LoginCard({ onGoogleLogin }: LoginCardProps) {
                             />
                         </svg>
                         Tiếp tục với Google Account
-                    </button>
+                    </Button>
                 </div>
 
                 {/* Footer Note */}

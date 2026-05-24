@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import LoginCard from '../_components/LoginCard';
 
+import { getGoogleLoginUrl } from '../_api/auth';
+
 export default function LoginPage() {
     const router = useRouter();
 
@@ -16,8 +18,8 @@ export default function LoginPage() {
     }, [router]);
 
     const handleGoogleLogin = () => {
-        // Chuyển hướng trình duyệt sang API Google Auth của Backend NestJS
-        window.location.href = 'http://localhost:3001/api/auth/google';
+        // Chuyển hướng trình duyệt sang API Google Auth của Backend NestJS từ _api/auth
+        window.location.href = getGoogleLoginUrl();
     };
 
     return <LoginCard onGoogleLogin={handleGoogleLogin} />;
